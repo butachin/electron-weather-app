@@ -1,6 +1,7 @@
 ## Electron+React+Typescriptでお天気アプリ
 
-![default](https://user-images.githubusercontent.com/33411216/51167408-e03c3700-18e9-11e9-94d1-5b3546623388.gif)
+![default](https://user-images.githubusercontent.com/33411216/51424798-67551c00-1c16-11e9-981c-02d0047f06c9.gif)
+
 
 
 cssをしっかりいじっていないので左によっているが勘弁してください．
