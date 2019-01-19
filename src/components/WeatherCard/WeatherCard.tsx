@@ -45,10 +45,8 @@ class WeatherCard extends React.Component<IWeatherCard, any> {
 
   public render() {
     return (
-      <div className="Card">
-        <Card 
-        style={{ width: 800 }}
-        >
+      <div>
+        <Card className="Card">
           <Meta
             avatar={<Avatar src={`http://openweathermap.org/img/w/${this.props.weather[0].icon}.png`}size="large"/>}
             title={

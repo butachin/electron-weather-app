@@ -1,7 +1,12 @@
 @import '~antd/dist/antd.css';
 
 .Card {
-  margin: auto
+  width: 700px;
+  margin: auto;
+}
+
+.Jumbotron {
+  text-align: center;
 }
 
 .App {
