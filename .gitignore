@@ -22,15 +22,6 @@ yarn-error.log*
 
 /.env
 
-### https://raw.github.com/github/gitignore//Global/VisualStudioCode.gitignore
-
-/.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-
 ### https://raw.github.com/github/gitignore/042be9dc99df945d78c0b66306b92142bb09109c/VisualStudio.gitignore
 
 ## Ignore Visual Studio temporary files, build results, and
@@ -374,5 +365,14 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database 
 healthchecksdb
+
+
+### https://raw.github.com/github/gitignore/042be9dc99df945d78c0b66306b92142bb09109c/Global/VisualStudioCode.gitignore
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 
