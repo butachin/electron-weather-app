@@ -23,7 +23,7 @@ class WeatherCardList extends React.Component<any, IWeatherCardList> {
       .get("http://api.openweathermap.org/data/2.5/forecast")
       .query({
         q: "Hakodate",
-        appid: process.env.REACT_APP_API_KEY
+        appid: "742c5ceb44cc03def377fa696628f8d2"
       })
       .then(response => response.body.list)
       .then(body => {
