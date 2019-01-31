@@ -11,6 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Moders\" />
+    <Folder Include="Models\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Endpoints\" />
+    <Folder Include="Repositories\Interfaces\" />
   </ItemGroup>
 </Project>
