@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package proto.weather;
+
+service Weathers{
+    rpc Get (GetRequest) returns (GetResponse) {}
+}
+
+message Weather {
+    double ID = 1;
+    string Main = 2;
+    double Temp = 3;
+    double TempMax = 4;
+    double TempMin = 5;
+    double Wind = 6;
+    string Type = 7;
+    string Description = 8;
+    string DtText = 9;
+}
+
+message GetRequest {
+    string cityName = 1;
+}
+
+message GetResponse {
+    Weather Weather = 1;
+}
