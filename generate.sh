@@ -1,0 +1,1 @@
+protoc -I ./Proto --csharp_out=./Server/Models/Proto --grpc_out=./Server/Models/Proto --plugin=protoc-gen-grpc=/usr/local/bin/grpc_csharp_plugin ./Proto/weather.proto
