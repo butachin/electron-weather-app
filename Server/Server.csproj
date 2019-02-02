@@ -17,5 +17,11 @@
     <Folder Include="Repositories\" />
     <Folder Include="Repositories\Endpoints\" />
     <Folder Include="Repositories\Interfaces\" />
+    <Folder Include="Implements\" />
+    <Folder Include="Service\" />
+    <Folder Include="Service\Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Controllers\ValuesController.cs" />
   </ItemGroup>
 </Project>

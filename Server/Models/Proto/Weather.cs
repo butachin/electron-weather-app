@@ -25,9 +25,9 @@ namespace Proto.Weather {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg13ZWF0aGVyLnByb3RvEg1wcm90by53ZWF0aGVyIpQBCgdXZWF0aGVyEgoK",
-            "AklEGAEgASgBEgwKBE1haW4YAiABKAkSDAoEVGVtcBgDIAEoARIPCgdUZW1w",
-            "TWF4GAQgASgBEg8KB1RlbXBNaW4YBSABKAESDAoEV2luZBgGIAEoARIMCgRU",
-            "eXBlGAcgASgJEhMKC0Rlc2NyaXB0aW9uGAggASgJEg4KBkR0VGV4dBgJIAEo",
+            "AklEGAEgASgBEgwKBFR5cGUYAiABKAkSDAoEVGVtcBgDIAEoARIPCgdUZW1w",
+            "TWF4GAQgASgBEg8KB1RlbXBNaW4YBSABKAESDAoEV2luZBgGIAEoARITCgtE",
+            "ZXNjcmlwdGlvbhgHIAEoCRIMCgRJY29uGAggASgJEg4KBkR0VGV4dBgJIAEo",
             "CSIeCgpHZXRSZXF1ZXN0EhAKCGNpdHlOYW1lGAEgASgJIjYKC0dldFJlc3Bv",
             "bnNlEicKB1dlYXRoZXIYASABKAsyFi5wcm90by53ZWF0aGVyLldlYXRoZXIy",
             "SgoIV2VhdGhlcnMSPgoDR2V0EhkucHJvdG8ud2VhdGhlci5HZXRSZXF1ZXN0",
@@ -35,7 +35,7 @@ namespace Proto.Weather {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Weather.Weather), global::Proto.Weather.Weather.Parser, new[]{ "ID", "Main", "Temp", "TempMax", "TempMin", "Wind", "Type", "Description", "DtText" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Weather.Weather), global::Proto.Weather.Weather.Parser, new[]{ "ID", "Type", "Temp", "TempMax", "TempMin", "Wind", "Description", "Icon", "DtText" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Weather.GetRequest), global::Proto.Weather.GetRequest.Parser, new[]{ "CityName" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Weather.GetResponse), global::Proto.Weather.GetResponse.Parser, new[]{ "Weather" }, null, null, null)
           }));
@@ -70,13 +70,13 @@ namespace Proto.Weather {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Weather(Weather other) : this() {
       iD_ = other.iD_;
-      main_ = other.main_;
+      type_ = other.type_;
       temp_ = other.temp_;
       tempMax_ = other.tempMax_;
       tempMin_ = other.tempMin_;
       wind_ = other.wind_;
-      type_ = other.type_;
       description_ = other.description_;
+      icon_ = other.icon_;
       dtText_ = other.dtText_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -97,14 +97,14 @@ namespace Proto.Weather {
       }
     }
 
-    /// <summary>Field number for the "Main" field.</summary>
-    public const int MainFieldNumber = 2;
-    private string main_ = "";
+    /// <summary>Field number for the "Type" field.</summary>
+    public const int TypeFieldNumber = 2;
+    private string type_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Main {
-      get { return main_; }
+    public string Type {
+      get { return type_; }
       set {
-        main_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -152,25 +152,25 @@ namespace Proto.Weather {
       }
     }
 
-    /// <summary>Field number for the "Type" field.</summary>
-    public const int TypeFieldNumber = 7;
-    private string type_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Type {
-      get { return type_; }
-      set {
-        type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "Description" field.</summary>
-    public const int DescriptionFieldNumber = 8;
+    public const int DescriptionFieldNumber = 7;
     private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Description {
       get { return description_; }
       set {
         description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Icon" field.</summary>
+    public const int IconFieldNumber = 8;
+    private string icon_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -199,13 +199,13 @@ namespace Proto.Weather {
         return true;
       }
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(ID, other.ID)) return false;
-      if (Main != other.Main) return false;
+      if (Type != other.Type) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Temp, other.Temp)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(TempMax, other.TempMax)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(TempMin, other.TempMin)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Wind, other.Wind)) return false;
-      if (Type != other.Type) return false;
       if (Description != other.Description) return false;
+      if (Icon != other.Icon) return false;
       if (DtText != other.DtText) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -214,13 +214,13 @@ namespace Proto.Weather {
     public override int GetHashCode() {
       int hash = 1;
       if (ID != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(ID);
-      if (Main.Length != 0) hash ^= Main.GetHashCode();
+      if (Type.Length != 0) hash ^= Type.GetHashCode();
       if (Temp != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Temp);
       if (TempMax != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(TempMax);
       if (TempMin != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(TempMin);
       if (Wind != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Wind);
-      if (Type.Length != 0) hash ^= Type.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
       if (DtText.Length != 0) hash ^= DtText.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -239,9 +239,9 @@ namespace Proto.Weather {
         output.WriteRawTag(9);
         output.WriteDouble(ID);
       }
-      if (Main.Length != 0) {
+      if (Type.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(Main);
+        output.WriteString(Type);
       }
       if (Temp != 0D) {
         output.WriteRawTag(25);
@@ -259,13 +259,13 @@ namespace Proto.Weather {
         output.WriteRawTag(49);
         output.WriteDouble(Wind);
       }
-      if (Type.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Type);
-      }
       if (Description.Length != 0) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(58);
         output.WriteString(Description);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Icon);
       }
       if (DtText.Length != 0) {
         output.WriteRawTag(74);
@@ -282,8 +282,8 @@ namespace Proto.Weather {
       if (ID != 0D) {
         size += 1 + 8;
       }
-      if (Main.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Main);
+      if (Type.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
       }
       if (Temp != 0D) {
         size += 1 + 8;
@@ -297,11 +297,11 @@ namespace Proto.Weather {
       if (Wind != 0D) {
         size += 1 + 8;
       }
-      if (Type.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
-      }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
       }
       if (DtText.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(DtText);
@@ -320,8 +320,8 @@ namespace Proto.Weather {
       if (other.ID != 0D) {
         ID = other.ID;
       }
-      if (other.Main.Length != 0) {
-        Main = other.Main;
+      if (other.Type.Length != 0) {
+        Type = other.Type;
       }
       if (other.Temp != 0D) {
         Temp = other.Temp;
@@ -335,11 +335,11 @@ namespace Proto.Weather {
       if (other.Wind != 0D) {
         Wind = other.Wind;
       }
-      if (other.Type.Length != 0) {
-        Type = other.Type;
-      }
       if (other.Description.Length != 0) {
         Description = other.Description;
+      }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
       }
       if (other.DtText.Length != 0) {
         DtText = other.DtText;
@@ -360,7 +360,7 @@ namespace Proto.Weather {
             break;
           }
           case 18: {
-            Main = input.ReadString();
+            Type = input.ReadString();
             break;
           }
           case 25: {
@@ -380,11 +380,11 @@ namespace Proto.Weather {
             break;
           }
           case 58: {
-            Type = input.ReadString();
+            Description = input.ReadString();
             break;
           }
           case 66: {
-            Description = input.ReadString();
+            Icon = input.ReadString();
             break;
           }
           case 74: {

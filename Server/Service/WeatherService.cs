@@ -27,6 +27,8 @@ namespace Server.Service
                 weather.TempMin = a.MainClass.TempMin;
                 weather.Wind = a.Wind.Speed;
                 weather.Description = a.WeatherModel.Description.ToString();
+                weather.Icon = a.WeatherModel.Icon;
+                weather.DtText = a.List[0].DtTxt.ToString();
 
                 weatherList.Add(weather);
             }
