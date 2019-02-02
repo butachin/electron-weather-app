@@ -8,13 +8,13 @@ service Weathers{
 
 message Weather {
     double ID = 1;
-    string Main = 2;
+    string Type = 2;
     double Temp = 3;
     double TempMax = 4;
     double TempMin = 5;
     double Wind = 6;
-    string Type = 7;
-    string Description = 8;
+    string Description = 7;
+    string Icon = 8;
     string DtText = 9;
 }
 
