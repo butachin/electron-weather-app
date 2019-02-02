@@ -32,6 +32,15 @@ namespace Server.Models
 
         [JsonProperty("city")]
         public City City { get; set; }
+
+        [JsonProperty("weather")]
+        public WeatherModel WeatherModel { get; set; }
+
+        [JsonProperty("main")]
+        public MainClass MainClass { get; set; }
+
+        [JsonProperty("wind")]
+        public Wind Wind { get; set; }
     }
 
     public partial class City
@@ -70,7 +79,7 @@ namespace Server.Models
         public MainClass Main { get; set; }
 
         [JsonProperty("weather")]
-        public Weather[] Weather { get; set; }
+        public WeatherModel[] Weather { get; set; }
 
         [JsonProperty("clouds")]
         public Clouds Clouds { get; set; }
@@ -136,7 +145,7 @@ namespace Server.Models
         public Pod Pod { get; set; }
     }
 
-    public partial class Weather
+    public partial class WeatherModel
     {
         [JsonProperty("id")]
         public long Id { get; set; }
