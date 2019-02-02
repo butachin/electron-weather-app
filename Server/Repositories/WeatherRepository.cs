@@ -14,14 +14,14 @@ namespace Server.Repositories
             string ROOT_URL = OpenWeatherMap.ROOT_URL;
             string APP_KEY = OpenWeatherMap.APP_KEY;
             string url = ROOT_URL + parametar + APP_KEY;
-            var weatherList = new List<OpenWeather>();
+            var openWeatherList = new List<OpenWeather>();
             using(WebClient webClient = new WebClient())
             {
                 string json = webClient.DownloadString(url);
                 OpenWeather openWeather = OpenWeather.FromJson(json);
-                weatherList.Add(openWeather);
+                openWeatherList.Add(openWeather);
             }
-            return weatherList;
+            return openWeatherList;
         }
     }
 }
