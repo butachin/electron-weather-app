@@ -62,13 +62,13 @@ proto.proto.weather.Weather.prototype.toObject = function(opt_includeInstance) {
 proto.proto.weather.Weather.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: +jspb.Message.getFieldWithDefault(msg, 1, 0.0),
-    main: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 2, ""),
     temp: +jspb.Message.getFieldWithDefault(msg, 3, 0.0),
     tempmax: +jspb.Message.getFieldWithDefault(msg, 4, 0.0),
     tempmin: +jspb.Message.getFieldWithDefault(msg, 5, 0.0),
     wind: +jspb.Message.getFieldWithDefault(msg, 6, 0.0),
-    type: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    icon: jspb.Message.getFieldWithDefault(msg, 8, ""),
     dttext: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
@@ -112,7 +112,7 @@ proto.proto.weather.Weather.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMain(value);
+      msg.setType(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readDouble());
@@ -132,11 +132,11 @@ proto.proto.weather.Weather.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
+      msg.setDescription(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
+      msg.setIcon(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
@@ -178,7 +178,7 @@ proto.proto.weather.Weather.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getMain();
+  f = message.getType();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -213,14 +213,14 @@ proto.proto.weather.Weather.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getType();
+  f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getDescription();
+  f = message.getIcon();
   if (f.length > 0) {
     writer.writeString(
       8,
@@ -253,16 +253,16 @@ proto.proto.weather.Weather.prototype.setId = function(value) {
 
 
 /**
- * optional string Main = 2;
+ * optional string Type = 2;
  * @return {string}
  */
-proto.proto.weather.Weather.prototype.getMain = function() {
+proto.proto.weather.Weather.prototype.getType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.proto.weather.Weather.prototype.setMain = function(value) {
+proto.proto.weather.Weather.prototype.setType = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -328,31 +328,31 @@ proto.proto.weather.Weather.prototype.setWind = function(value) {
 
 
 /**
- * optional string Type = 7;
+ * optional string Description = 7;
  * @return {string}
  */
-proto.proto.weather.Weather.prototype.getType = function() {
+proto.proto.weather.Weather.prototype.getDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /** @param {string} value */
-proto.proto.weather.Weather.prototype.setType = function(value) {
+proto.proto.weather.Weather.prototype.setDescription = function(value) {
   jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string Description = 8;
+ * optional string Icon = 8;
  * @return {string}
  */
-proto.proto.weather.Weather.prototype.getDescription = function() {
+proto.proto.weather.Weather.prototype.getIcon = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
 /** @param {string} value */
-proto.proto.weather.Weather.prototype.setDescription = function(value) {
+proto.proto.weather.Weather.prototype.setIcon = function(value) {
   jspb.Message.setProto3StringField(this, 8, value);
 };
 

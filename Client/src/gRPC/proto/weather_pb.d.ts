@@ -4,8 +4,8 @@ export class Weather extends jspb.Message {
   constructor ();
   getId(): number;
   setId(a: number): void;
-  getMain(): string;
-  setMain(a: string): void;
+  getType(): string;
+  setType(a: string): void;
   getTemp(): number;
   setTemp(a: number): void;
   getTempmax(): number;
@@ -14,10 +14,10 @@ export class Weather extends jspb.Message {
   setTempmin(a: number): void;
   getWind(): number;
   setWind(a: number): void;
-  getType(): string;
-  setType(a: string): void;
   getDescription(): string;
   setDescription(a: string): void;
+  getIcon(): string;
+  setIcon(a: string): void;
   getDttext(): string;
   setDttext(a: string): void;
   serializeBinary(): Uint8Array;
@@ -31,13 +31,13 @@ export class Weather extends jspb.Message {
 export namespace Weather {
   export type AsObject = {
     id: number;
-    main: string;
+    type: string;
     temp: number;
     tempmax: number;
     tempmin: number;
     wind: number;
-    type: string;
     description: string;
+    icon: string;
     dttext: string;
   }
 }
