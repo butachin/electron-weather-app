@@ -10,9 +10,10 @@ namespace Server.Repositories
     {
         public List<OpenWeather> FindOpenWeatherByCityName(string cityName)
         {
+            string parametar = "?q" + cityName;
             string ROOT_URL = OpenWeatherMap.ROOT_URL;
             string APP_KEY = OpenWeatherMap.APP_KEY;
-            string url = ROOT_URL + APP_KEY;
+            string url = ROOT_URL + parametar + APP_KEY;
             var weatherList = new List<OpenWeather>();
             using(WebClient webClient = new WebClient())
             {
