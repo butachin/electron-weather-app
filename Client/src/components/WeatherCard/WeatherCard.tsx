@@ -4,35 +4,14 @@ import { Card, Avatar } from "antd";
 const { Meta } = Card;
 
 export interface IWeatherCard {
-  dt: number;
-  main: {
-    temp: number;
-    temp_min: number;
-    temp_max: number;
-    pressure: number;
-    sea_level: number;
-    grnd_level: number;
-    humidity: number;
-    temp_kf: number;
-  };
-  weather: [
-    {
-      id: number;
-      main: string;
-      description: string;
-      icon: string;
-    }
-  ];
-  clouds: {
-    all: number;
-  };
-  wind: {
-    speed: number;
-    deg: number;
-  };
-  sys?: {
-    pod: string;
-  };
+  id: number;
+  type: string;
+  temp: number;
+  temp_max: number;
+  temp_min: number;
+  wind: number;
+  description: string;
+  icon: string;
   dt_txt: string;
 }
 
@@ -48,11 +27,11 @@ class WeatherCard extends React.Component<IWeatherCard, any> {
       <div>
         <Card className="Card">
           <Meta
-            avatar={<Avatar src={`http://openweathermap.org/img/w/${this.props.weather[0].icon}.png`}size="large"/>}
+            avatar={<Avatar src={`http://openweathermap.org/img/w/${this.props.icon}.png`}size="large"/>}
             title={
               <div>
-                <p>{this.props.weather[0].main}</p>
-                <h3>{this.kelvinToCelsius(this.props.main.temp) + "°C"}</h3>
+                <p>{this.props.type}</p>
+                <h3>{this.kelvinToCelsius(this.props.temp) + "°C"}</h3>
               </div>
             }
             description={this.props.dt_txt}
