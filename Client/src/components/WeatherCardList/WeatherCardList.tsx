@@ -1,8 +1,9 @@
 import * as React from "react";
-import * as request from "superagent";
 import WeatherCard, { IWeatherCard } from "../WeatherCard/WeatherCard";
 import * as dotenv from "dotenv";
 import { Jumbotron　} from 'react-bootstrap';
+import { getWeather } from 'src/gRPC/client/WeatherClient';
+import * as WeatherPb from 'src/gRPC/proto/weather_pb';
 
 dotenv.config();
 
@@ -18,29 +19,27 @@ class WeatherCardList extends React.Component<any, IWeatherCardList> {
     };
   }
 
-  public componentWillMount() {
-    request
-      .get("http://api.openweathermap.org/data/2.5/forecast")
-      .query({
-        q: "Hakodate",
-        appid: "742c5ceb44cc03def377fa696628f8d2"
-      })
-      .then(response => response.body.list)
-      .then(body => {
-        console.log(body);
-        this.setState({
-          weatherCards: body
-        });
-        console.log(JSON.stringify(this.state.weatherCards));
-      })
-      .catch(error => {
-        console.log(error);
-        throw error;
-      });
+  async componentDidMount() {
+    const res = await getWeather("hakodate")
+    const weather: WeatherPb.Weather = await res.result.getWeather();
+    let buf: IWeatherCard = {
+      id: weather.getId(),
+      type: weather.getType(),
+      temp: weather.getTemp(),
+      temp_max: weather.getTempmax(),
+      temp_min: weather.getTempmin(),
+      wind: weather.getWind(),
+      description: weather.getDescription(),
+      icon: weather.getIcon(),
+      dt_txt: weather.getDttext()
+    }
+    this.state.weatherCards.push(buf)
+    this.setState ({ weatherCards: this.state.weatherCards});
   }
+
   public render() {
     const resultNodes = this.state.weatherCards.map(weatherCard => {
-      return <WeatherCard key={weatherCard.dt} {...weatherCard} />;
+      return <WeatherCard key={weatherCard.id} {...weatherCard} />;
     });
 
     return (
