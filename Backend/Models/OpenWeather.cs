@@ -177,12 +177,12 @@ namespace Backend.Models
 
     public partial class OpenWeather
     {
-        public static OpenWeather FromJson(string json) => JsonConvert.DeserializeObject<OpenWeather>(json, Server.Models.Converter.Settings);
+        public static OpenWeather FromJson(string json) => JsonConvert.DeserializeObject<OpenWeather>(json, Backend.Models.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this OpenWeather self) => JsonConvert.SerializeObject(self, Server.Models.Converter.Settings);
+        public static string ToJson(this OpenWeather self) => JsonConvert.SerializeObject(self, Backend.Models.Converter.Settings);
     }
 
     internal static class Converter
