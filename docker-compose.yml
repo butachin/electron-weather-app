@@ -1,5 +1,5 @@
 version: "3"
-service:
+services:
     grpc:
       build: ./Server
       stdin_open: true
