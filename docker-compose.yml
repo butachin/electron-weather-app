@@ -1,0 +1,12 @@
+version: "3"
+service:
+    grpc:
+      build: ./Server
+      stdin_open: true
+      tty: true
+      ports: 
+        - 5000:5000
+    proxy:
+      build: ./Envoy
+      ports:
+        - 8080:8080
