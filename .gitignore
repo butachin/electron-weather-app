@@ -276,11 +276,20 @@ ASALocalRun/
 .localhistory/
 # BeatPulse healthcheck temp database 
 healthchecksdb
-### https://raw.github.com/github/gitignore/3818fecaa8f9d213b3b1b9dfc11ebcc8e8caeb45/Global/VisualStudioCode.gitignore
+# Created by https://www.gitignore.io/api/visualstudiocode
+# Edit at https://www.gitignore.io/?templates=visualstudiocode
+
+### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# End of https://www.gitignore.io/api/visualstudiocode
 
 
