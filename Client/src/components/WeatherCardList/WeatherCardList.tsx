@@ -19,10 +19,10 @@ class WeatherCardList extends React.Component<any, IWeatherCardList> {
     };
   }
 
-  async componentDidMount() {
+  public async componentDidMount() {
     const res = await getWeather("hakodate")
     const weather: WeatherPb.Weather = await res.result.getWeather();
-    let buf: IWeatherCard = {
+    const buf: IWeatherCard = {
       id: weather.getId(),
       type: weather.getType(),
       temp: weather.getTemp(),
