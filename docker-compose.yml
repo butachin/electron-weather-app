@@ -1,7 +1,7 @@
 version: "3"
 services:
     grpc:
-      build: ./Server
+      build: ./Backend
       stdin_open: true
       tty: true
       ports: 
