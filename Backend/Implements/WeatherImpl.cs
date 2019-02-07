@@ -11,7 +11,11 @@ namespace Backend.Implements
         IWeatherService service;
         public WeatherImpl(IWeatherService _service): base()
         {
-            this.service = _service ?? throw new ArgumentNullException(nameof(IWeatherService));
+            if (_service == null)
+            {
+                throw new ArgumentNullException(nameof(IWeatherService));
+            }
+            this.service = _service;
         }
         public override Task<GetResponse> Get(GetRequest request, ServerCallContext context)
         {

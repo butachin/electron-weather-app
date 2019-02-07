@@ -20,14 +20,14 @@ namespace Backend.Service
             foreach (OpenWeather a in openWeatherList)
             {
                 var weather = new Weather();
-                weather.ID = a.WeatherModel.Id;
-                weather.Type = a.WeatherModel.Main.ToString();
-                weather.Temp = a.MainClass.Temp;
-                weather.TempMax = a.MainClass.TempMax;
-                weather.TempMin = a.MainClass.TempMin;
-                weather.Wind = a.Wind.Speed;
-                weather.Description = a.WeatherModel.Description.ToString();
-                weather.Icon = a.WeatherModel.Icon;
+                weather.ID = a.List[0].Weather[0].Id;
+                weather.Type = a.List[0].Weather[0].Main.ToString();
+                weather.Temp = a.List[0].Main.Temp;
+                weather.TempMax = a.List[0].Main.TempMax;
+                weather.TempMin = a.List[0].Main.TempMin;
+                weather.Wind = a.List[0].Wind.Speed;
+                weather.Description = a.List[0].Weather[0].Description.ToString();
+                weather.Icon = a.List[0].Weather[0].Icon;
                 weather.DtText = a.List[0].DtTxt.ToString();
 
                 weatherList.Add(weather);
