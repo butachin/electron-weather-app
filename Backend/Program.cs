@@ -24,6 +24,7 @@ namespace Backend
             };
             server.Start();
 
+            Console.WriteLine("starting server ...");
             Console.Read();
 
             server.ShutdownAsync().Wait();
