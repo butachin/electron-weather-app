@@ -21,19 +21,23 @@ class WeatherCardList extends React.Component<any, IWeatherCardList> {
 
   public async componentDidMount() {
     const res = await getWeather("Hakodate")
-    const weather: WeatherPb.Weather = await res.result.getWeather();
-    const buf: IWeatherCard = {
-      id: weather.getId(),
-      type: weather.getType(),
-      temp: weather.getTemp(),
-      temp_max: weather.getTempmax(),
-      temp_min: weather.getTempmin(),
-      wind: weather.getWind(),
-      description: weather.getDescription(),
-      icon: weather.getIcon(),
-      dt_txt: weather.getDttext()
-    }
-    this.state.weatherCards.push(buf)
+    const weatherList: WeatherPb.Weather[] = await res.result.getWeatherList();
+
+    const buf = weatherList.map(weather =>{
+      const a: IWeatherCard = {
+        id: weather.getId(),
+        type: weather.getType(),
+        temp: weather.getTemp(),
+        temp_max: weather.getTempmax(),
+        temp_min: weather.getTempmin(),
+        wind: weather.getWind(),
+        description: weather.getDescription(),
+        icon: weather.getIcon(),
+        dt_txt: weather.getDttext()
+      }
+      this.state.weatherCards.push(a)
+    });
+    console.log(buf);
     this.setState ({ weatherCards: this.state.weatherCards});
   }
 

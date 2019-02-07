@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Grpc.Core;
 using Proto.Weather;
 using Backend.Service.Interface;
+using Grpc.Core.Logging;
 
 namespace Backend.Implements
 {
@@ -21,8 +22,9 @@ namespace Backend.Implements
         {
             string cityName = request.CityName;
             var weathers = this.service.FindOpenWeatherByCityName(cityName);
+            GrpcEnvironment.Logger.Debug(weathers.ToString());
             var response = new GetResponse();
-            response.Weather = weathers[0];
+            response.WeatherList.Add(weathers);
             return Task.FromResult(response);
         }
     }
