@@ -28,16 +28,16 @@ namespace Proto.Weather {
             "AklEGAEgASgBEgwKBFR5cGUYAiABKAkSDAoEVGVtcBgDIAEoARIPCgdUZW1w",
             "TWF4GAQgASgBEg8KB1RlbXBNaW4YBSABKAESDAoEV2luZBgGIAEoARITCgtE",
             "ZXNjcmlwdGlvbhgHIAEoCRIMCgRJY29uGAggASgJEg4KBkR0VGV4dBgJIAEo",
-            "CSIeCgpHZXRSZXF1ZXN0EhAKCGNpdHlOYW1lGAEgASgJIjYKC0dldFJlc3Bv",
-            "bnNlEicKB1dlYXRoZXIYASABKAsyFi5wcm90by53ZWF0aGVyLldlYXRoZXIy",
-            "SgoIV2VhdGhlcnMSPgoDR2V0EhkucHJvdG8ud2VhdGhlci5HZXRSZXF1ZXN0",
-            "GhoucHJvdG8ud2VhdGhlci5HZXRSZXNwb25zZSIAYgZwcm90bzM="));
+            "CSIeCgpHZXRSZXF1ZXN0EhAKCGNpdHlOYW1lGAEgASgJIjoKC0dldFJlc3Bv",
+            "bnNlEisKC3dlYXRoZXJMaXN0GAEgAygLMhYucHJvdG8ud2VhdGhlci5XZWF0",
+            "aGVyMkoKCFdlYXRoZXJzEj4KA0dldBIZLnByb3RvLndlYXRoZXIuR2V0UmVx",
+            "dWVzdBoaLnByb3RvLndlYXRoZXIuR2V0UmVzcG9uc2UiAGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Weather.Weather), global::Proto.Weather.Weather.Parser, new[]{ "ID", "Type", "Temp", "TempMax", "TempMin", "Wind", "Description", "Icon", "DtText" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Weather.GetRequest), global::Proto.Weather.GetRequest.Parser, new[]{ "CityName" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Weather.GetResponse), global::Proto.Weather.GetResponse.Parser, new[]{ "Weather" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Weather.GetResponse), global::Proto.Weather.GetResponse.Parser, new[]{ "WeatherList" }, null, null, null)
           }));
     }
     #endregion
@@ -551,7 +551,7 @@ namespace Proto.Weather {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GetResponse(GetResponse other) : this() {
-      weather_ = other.weather_ != null ? other.weather_.Clone() : null;
+      weatherList_ = other.weatherList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -560,15 +560,14 @@ namespace Proto.Weather {
       return new GetResponse(this);
     }
 
-    /// <summary>Field number for the "Weather" field.</summary>
-    public const int WeatherFieldNumber = 1;
-    private global::Proto.Weather.Weather weather_;
+    /// <summary>Field number for the "weatherList" field.</summary>
+    public const int WeatherListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Proto.Weather.Weather> _repeated_weatherList_codec
+        = pb::FieldCodec.ForMessage(10, global::Proto.Weather.Weather.Parser);
+    private readonly pbc::RepeatedField<global::Proto.Weather.Weather> weatherList_ = new pbc::RepeatedField<global::Proto.Weather.Weather>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Proto.Weather.Weather Weather {
-      get { return weather_; }
-      set {
-        weather_ = value;
-      }
+    public pbc::RepeatedField<global::Proto.Weather.Weather> WeatherList {
+      get { return weatherList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -584,14 +583,14 @@ namespace Proto.Weather {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Weather, other.Weather)) return false;
+      if(!weatherList_.Equals(other.weatherList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (weather_ != null) hash ^= Weather.GetHashCode();
+      hash ^= weatherList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -605,10 +604,7 @@ namespace Proto.Weather {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (weather_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Weather);
-      }
+      weatherList_.WriteTo(output, _repeated_weatherList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -617,9 +613,7 @@ namespace Proto.Weather {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (weather_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Weather);
-      }
+      size += weatherList_.CalculateSize(_repeated_weatherList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -631,12 +625,7 @@ namespace Proto.Weather {
       if (other == null) {
         return;
       }
-      if (other.weather_ != null) {
-        if (weather_ == null) {
-          weather_ = new global::Proto.Weather.Weather();
-        }
-        Weather.MergeFrom(other.Weather);
-      }
+      weatherList_.Add(other.weatherList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -649,10 +638,7 @@ namespace Proto.Weather {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (weather_ == null) {
-              weather_ = new global::Proto.Weather.Weather();
-            }
-            input.ReadMessage(weather_);
+            weatherList_.AddEntriesFrom(input, _repeated_weatherList_codec);
             break;
           }
         }

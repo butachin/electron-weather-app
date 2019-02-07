@@ -23,5 +23,5 @@ message GetRequest {
 }
 
 message GetResponse {
-    Weather Weather = 1;
+   repeated Weather weatherList = 1;
 }
