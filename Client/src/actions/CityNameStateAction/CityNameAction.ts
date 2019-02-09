@@ -1,6 +1,6 @@
 import CityNameActionType from './CityNameActionType';
 
-export interface ISearchAction {
+export default interface ISearchAction {
     type: CityNameActionType.SEARCH,
     cityName: string
 }
