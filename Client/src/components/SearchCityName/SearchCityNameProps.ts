@@ -1,5 +1,6 @@
 export interface ISearchCityNameProps {
-    search: (cityName: string) => void
+    search: (cityName: string) => void;
+    switchResultScreen: () => void;
 }
 
 type SearchCityNameProps = ISearchCityNameProps;

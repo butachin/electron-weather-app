@@ -35,7 +35,7 @@ export class SearchCityName extends React.Component<SearchCityNameProps, SearchC
     }
 
     private handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        const { search } = this.props;
+        const { search, switchResultScreen } = this.props;
         const { cityName } = this.state;
 
         e.preventDefault();
@@ -44,6 +44,8 @@ export class SearchCityName extends React.Component<SearchCityNameProps, SearchC
         }
 
         search(cityName);
+
+        switchResultScreen();
 
         this.setState({
             cityName:""
