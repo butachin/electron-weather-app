@@ -32,6 +32,7 @@ namespace Backend.Service
                 weather.Description = a.Weather[0].Description.ToString();
                 weather.Icon = a.Weather[0].Icon;
                 weather.DtText = a.DtTxt.ToString();
+
                 weatherList.Add(weather);
             }
             return weatherList;
