@@ -1,11 +1,11 @@
 import * as React from "react";
-import { ISearchCityNameProps } from './SearchCityNameProps';
-import { ISearchCityNameState } from './SearchCityNameState';
+import SearchCityNameProps from './SearchCityNameProps';
+import SearchCityNameState from './SearchCityNameState';
 import { Jumbotron, FormControl, ControlLabel, Button } from 'react-bootstrap';
 
 
-export class SearchCityName extends React.Component<ISearchCityNameProps, ISearchCityNameState> {
-    constructor(props: ISearchCityNameProps) { 
+export class SearchCityName extends React.Component<SearchCityNameProps, SearchCityNameState> {
+    constructor(props: SearchCityNameProps) { 
         super(props);
         this.state = {
             cityName: ""
