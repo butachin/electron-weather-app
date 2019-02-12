@@ -2,7 +2,7 @@ import * as React from "react";
 import "./App.css";
 import SearchCityName from './containers/SearchCityName/SearchCityName';
 import IScreenState, { ScreenType } from './states/ScreenState';
-import WeatherCardList from "./components/WeatherCardList/WeatherCardList";
+import WeatherCardList from "./containers/WeatherCardList/WeatherCardList";
 
 export interface IAppConnectedProps {
   screenState: IScreenState
