@@ -16,7 +16,7 @@ export interface IWeatherCardListConnectedProps {
   cityNameState: ICityNameState;
 }
 
-class WeatherCardList extends React.Component<any, IWeatherCardList> {
+class WeatherCardList extends React.Component<IWeatherCardListConnectedProps, IWeatherCardList> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -25,7 +25,8 @@ class WeatherCardList extends React.Component<any, IWeatherCardList> {
   }
 
   public async componentDidMount() {
-    const res = await getWeather("Hakodate")
+    const { cityNameState } = this.props;
+    const res = await getWeather(cityNameState.cityName)
     const weatherList: WeatherPb.Weather[] = await res.result.getWeatherList();
 
     const buf = weatherList.map(weather =>{
