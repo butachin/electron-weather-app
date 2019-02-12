@@ -1,0 +1,6 @@
+@import '~antd/dist/antd.css';
+
+.Card {
+    width: 700px;
+    margin: auto;
+  }  

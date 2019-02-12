@@ -1,0 +1,15 @@
+.Label {
+  margin: 30px;
+  text-align: center;
+}
+
+.Form {
+  width: 500px; 
+  height: 60px; 
+  margin: auto;
+  text-align: center;
+}
+  
+.Button {
+  margin: auto;
+}
