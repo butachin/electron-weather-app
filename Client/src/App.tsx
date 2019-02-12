@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./App.css";
+import "./css/App.css";
 import SearchCityName from './containers/SearchCityName/SearchCityName';
 import IScreenState, { ScreenType } from './states/ScreenState';
 import WeatherCardList from "./containers/WeatherCardList/WeatherCardList";

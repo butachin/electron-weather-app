@@ -1,12 +1,9 @@
 import * as React from "react";
 import WeatherCard, { IWeatherCard } from "../WeatherCard/WeatherCard";
-import * as dotenv from "dotenv";
 import { Jumbotron　} from 'react-bootstrap';
 import { getWeather } from 'src/gRPC/client/WeatherClient';
 import * as WeatherPb from 'src/gRPC/proto/weather_pb';
 import { ICityNameState } from 'src/states/CityNameState';
-
-dotenv.config();
 
 interface IWeatherCardList {
   weatherCards: IWeatherCard[];
