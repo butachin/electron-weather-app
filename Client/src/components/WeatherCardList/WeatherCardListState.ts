@@ -1,4 +1,5 @@
-import { IWeatherCard } from "../WeatherCard/WeatherCard";
+import { IWeatherCard } from '../WeatherCard/WeatherCardProps';
+
 
 export interface IWeatherCardList {
     weatherCards: IWeatherCard[];
