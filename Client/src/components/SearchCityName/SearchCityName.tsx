@@ -4,7 +4,7 @@ import SearchCityNameState from './SearchCityNameState';
 import { Jumbotron, FormControl, ControlLabel, Button } from 'react-bootstrap';
 import "../../css/SearchCityName.css";
 
-export class SearchCityName extends React.Component<SearchCityNameProps, SearchCityNameState> {
+export default class SearchCityName extends React.Component<SearchCityNameProps, SearchCityNameState> {
     constructor(props: SearchCityNameProps) { 
         super(props);
         this.state = {
@@ -28,6 +28,7 @@ export class SearchCityName extends React.Component<SearchCityNameProps, SearchC
                         value={this.state.cityName} 
                         placeholder="調べたい市を入力してください" 
                         bsSize="large"
+                        aria-label='cityName-input'
                     />
                     <Button className="Button" bsStyle="primary" type="submit" style={{display:'block'}}>検索</Button>
                 </form>
