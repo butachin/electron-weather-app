@@ -1,22 +1,11 @@
 import * as React from "react";
 import { Card, Avatar } from "antd";
 import "../../css/WeatherCard.css";
+import WeatherCardProps from './WeatherCardProps';
 
 const { Meta } = Card;
 
-export interface IWeatherCard {
-  id: number;
-  type: string;
-  temp: number;
-  temp_max: number;
-  temp_min: number;
-  wind: number;
-  description: string;
-  icon: string;
-  dt_txt: string;
-}
-
-class WeatherCard extends React.Component<IWeatherCard, any> {
+class WeatherCard extends React.Component<WeatherCardProps, any> {
   constructor(props: any) {
     super(props);
   }
