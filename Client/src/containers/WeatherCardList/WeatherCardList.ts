@@ -1,9 +1,10 @@
 import IRootState from "src/states";
-import WeatherCardList, { IWeatherCardListConnectedProps } from 'src/components/WeatherCardList/WeatherCardList';
+import WeatherCardList from 'src/components/WeatherCardList/WeatherCardList';
 import { connect } from 'react-redux';
+import WeatherCardListConnectedProps from 'src/components/WeatherCardList/WeatherCardListProps';
 
 
-const mapStateToProps = (state: IRootState): IWeatherCardListConnectedProps => {
+const mapStateToProps = (state: IRootState): WeatherCardListConnectedProps => {
     return {
         cityNameState: state.cityNameState
     }

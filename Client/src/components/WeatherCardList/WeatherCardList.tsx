@@ -3,17 +3,10 @@ import WeatherCard, { IWeatherCard } from "../WeatherCard/WeatherCard";
 import { Jumbotron　} from 'react-bootstrap';
 import { getWeather } from 'src/gRPC/client/WeatherClient';
 import * as WeatherPb from 'src/gRPC/proto/weather_pb';
-import { ICityNameState } from 'src/states/CityNameState';
+import WeatherCardListConnectedProps from './WeatherCardListProps';
+import WeatherCardListState from './WeatherCardListState';
 
-interface IWeatherCardList {
-  weatherCards: IWeatherCard[];
-}
-
-export interface IWeatherCardListConnectedProps {
-  cityNameState: ICityNameState;
-}
-
-class WeatherCardList extends React.Component<IWeatherCardListConnectedProps, IWeatherCardList> {
+class WeatherCardList extends React.Component<WeatherCardListConnectedProps, WeatherCardListState> {
   constructor(props: any) {
     super(props);
     this.state = {
