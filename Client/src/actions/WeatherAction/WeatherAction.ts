@@ -1,4 +1,5 @@
 import { WeatherActionType } from './WeatherActionType';
+import { Weathers } from 'src/states/WeatherState';
 
 export interface WeatherRequestAction {
     type: WeatherActionType.WEATHER_REQUEST;
@@ -7,6 +8,7 @@ export interface WeatherRequestAction {
 
 export interface WeatherSuccededAction {
     type: WeatherActionType.WEATHER_SUCCEDED;
+    weatherList: Weathers
 }
 
 export interface WeatherFailedAction {
