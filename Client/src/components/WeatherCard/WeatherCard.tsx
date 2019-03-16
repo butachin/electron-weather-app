@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Card, Avatar } from "antd";
 import "../../css/WeatherCard.css";
-import WeatherCardProps from './WeatherCardProps';
+import { IWeather } from 'src/states/WeatherState';
 
 const { Meta } = Card;
 
-class WeatherCard extends React.Component<WeatherCardProps, any> {
+class WeatherCard extends React.Component<IWeather, any> {
   constructor(props: any) {
     super(props);
   }

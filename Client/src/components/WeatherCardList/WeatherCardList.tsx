@@ -5,7 +5,7 @@ import { getWeather } from 'src/gRPC/client/WeatherClient';
 import * as WeatherPb from 'src/gRPC/proto/weather_pb';
 import WeatherCardListConnectedProps from './WeatherCardListProps';
 import WeatherCardListState from './WeatherCardListState';
-import { IWeatherCard } from '../WeatherCard/WeatherCardProps';
+import { IWeather } from 'src/states/WeatherState';
 
 class WeatherCardList extends React.Component<WeatherCardListConnectedProps, WeatherCardListState> {
   constructor(props: any) {
@@ -21,7 +21,7 @@ class WeatherCardList extends React.Component<WeatherCardListConnectedProps, Wea
     const weatherList: WeatherPb.Weather[] = await res.result.getWeatherList();
 
     const buf = weatherList.map(weather =>{
-      const a: IWeatherCard = {
+      const a: IWeather = {
         id: weather.getId(),
         type: weather.getType(),
         temp: weather.getTemp(),
