@@ -78,7 +78,7 @@ namespace Backend.Models
         [JsonProperty("wind")]
         public Wind Wind { get; set; }
 
-        [JsonProperty("rain", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("rain")]
         public Rain Rain { get; set; }
 
         [JsonProperty("sys")]
