@@ -11,6 +11,8 @@ const weatherState = (state: Weathers = initialState, action: WeatherAction): We
             ...state.slice(state.length),
             ...action.weatherList
         ]
+        case WeatherActionType.WEATHER_FAILED:
+        return initialState;
         default:
         return initialState;
     }

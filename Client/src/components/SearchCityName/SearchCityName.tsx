@@ -46,8 +46,8 @@ export default class SearchCityName extends React.Component<SearchCityNameProps,
         }
 
         search(cityName);
-        weatherRequest(cityName);
         switchResultScreen();
+        weatherRequest(cityName);
 
         this.setState({
             cityName:""
