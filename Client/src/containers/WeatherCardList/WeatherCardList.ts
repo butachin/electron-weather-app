@@ -6,7 +6,8 @@ import WeatherCardListConnectedProps from 'src/components/WeatherCardList/Weathe
 
 const mapStateToProps = (state: IRootState): WeatherCardListConnectedProps => {
     return {
-        cityNameState: state.cityNameState
+        cityNameState: state.cityNameState,
+        weatherState: state.weatherState
     }
 }
 
