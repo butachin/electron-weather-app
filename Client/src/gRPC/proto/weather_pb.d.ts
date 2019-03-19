@@ -62,8 +62,8 @@ export namespace GetRequest {
 
 export class GetResponse extends jspb.Message {
   constructor ();
-  getWeatherList(): Weather[];
-  setWeatherList(a: Weather[]): void;
+  getWeatherlistList(): Weather[];
+  setWeatherlistList(a: Weather[]): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetResponse): GetResponse.AsObject;
@@ -74,7 +74,7 @@ export class GetResponse extends jspb.Message {
 
 export namespace GetResponse {
   export type AsObject = {
-    weatherList: Weather[];
+    weatherlistList: Weather[];
   }
 }
 

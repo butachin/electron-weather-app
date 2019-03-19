@@ -568,7 +568,7 @@ proto.proto.weather.GetResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.proto.weather.GetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    weatherList: jspb.Message.toObjectList(msg.getWeatherList(),
+    weatherlistList: jspb.Message.toObjectList(msg.getWeatherlistList(),
     proto.proto.weather.Weather.toObject, includeInstance)
   };
 
@@ -609,7 +609,7 @@ proto.proto.weather.GetResponse.deserializeBinaryFromReader = function(msg, read
     case 1:
       var value = new proto.proto.weather.Weather;
       reader.readMessage(value,proto.proto.weather.Weather.deserializeBinaryFromReader);
-      msg.addWeather(value);
+      msg.addWeatherlist(value);
       break;
     default:
       reader.skipField();
@@ -640,7 +640,7 @@ proto.proto.weather.GetResponse.prototype.serializeBinary = function() {
  */
 proto.proto.weather.GetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getWeatherList();
+  f = message.getWeatherlistList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -652,17 +652,17 @@ proto.proto.weather.GetResponse.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * repeated Weather Weather = 1;
+ * repeated Weather weatherList = 1;
  * @return {!Array<!proto.proto.weather.Weather>}
  */
-proto.proto.weather.GetResponse.prototype.getWeatherList = function() {
+proto.proto.weather.GetResponse.prototype.getWeatherlistList = function() {
   return /** @type{!Array<!proto.proto.weather.Weather>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.proto.weather.Weather, 1));
 };
 
 
 /** @param {!Array<!proto.proto.weather.Weather>} value */
-proto.proto.weather.GetResponse.prototype.setWeatherList = function(value) {
+proto.proto.weather.GetResponse.prototype.setWeatherlistList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -672,13 +672,13 @@ proto.proto.weather.GetResponse.prototype.setWeatherList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.proto.weather.Weather}
  */
-proto.proto.weather.GetResponse.prototype.addWeather = function(opt_value, opt_index) {
+proto.proto.weather.GetResponse.prototype.addWeatherlist = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.proto.weather.Weather, opt_index);
 };
 
 
-proto.proto.weather.GetResponse.prototype.clearWeatherList = function() {
-  this.setWeatherList([]);
+proto.proto.weather.GetResponse.prototype.clearWeatherlistList = function() {
+  this.setWeatherlistList([]);
 };
 
 
