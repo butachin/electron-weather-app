@@ -7,8 +7,8 @@ import { WeatherActionType } from 'src/actions/WeatherAction/WeatherActionType';
 import { Weathers } from 'src/states/WeatherState';
 
 function* weatherRequest(action: WeatherRequestAction) {
-    const {response}: {response: WeatherPb.GetResponse} = yield call(getWeather, "Hakodate");
-    const weatherList = response.getWeatherList();
+    const response = yield call(getWeather, action.cityName);
+    const weatherList = response.result.getWeatherlistList();
     const weathers: Weathers = yield mapWeatherPbToWeathers(weatherList);
 
     if(weatherList) {
