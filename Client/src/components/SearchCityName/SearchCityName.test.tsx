@@ -9,7 +9,8 @@ describe('SearchCityName', () => {
         test('市を入力して「検索」ボタンを押すとSearchCityNameが呼び出される', () => {
             const searchSpy = jest.fn();
             const switchScreenSpy = jest.fn();
-            const utils = render(<SearchCityName search={searchSpy} switchResultScreen={switchScreenSpy}/>);
+            const weatherRequestSpy = jest.fn();
+            const utils = render(<SearchCityName search={searchSpy} switchResultScreen={switchScreenSpy} weatherRequest={weatherRequestSpy}/>);
             const FormControl = utils.getByLabelText('cityName-input') as HTMLInputElement;
             const Button = utils.getByText('検索') as HTMLButtonElement;
 
