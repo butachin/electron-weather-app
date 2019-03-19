@@ -5,5 +5,5 @@ import { IWeather } from './WeatherState';
 export default interface IRootState {
     cityNameState: ICityNameState;
     screenState: IScreenState;
-    weatherState: IWeather;
+    weatherState: IWeather[];
 }
