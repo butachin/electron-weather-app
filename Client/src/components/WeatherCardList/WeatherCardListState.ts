@@ -1,8 +1,7 @@
-import { IWeatherCard } from '../WeatherCard/WeatherCardProps';
-
+import { IWeather } from 'src/states/WeatherState';
 
 export interface IWeatherCardList {
-    weatherCards: IWeatherCard[];
+    weatherCards: IWeather[];
 }
 
 type WeatherCardListState = IWeatherCardList
