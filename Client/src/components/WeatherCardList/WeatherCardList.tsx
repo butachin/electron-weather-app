@@ -36,10 +36,7 @@ class WeatherCardList extends React.Component<WeatherCardListConnectedProps, Wea
   // }
 
   public render() {
-    const { weatherState } = this.props;
-    this.setState ({ weatherCards: weatherState});
-
-    const resultNodes = this.state.weatherCards.map(weatherCard => {
+    const resultNodes = this.props.weatherState.map(weatherCard => {
       return <WeatherCard data-test='cardList' key={weatherCard.id} {...weatherCard} />;
     });
 
