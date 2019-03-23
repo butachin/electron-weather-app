@@ -7,10 +7,9 @@ afterEach(cleanup);
 describe('SearchCityName', () => {
     describe('common', () => {
         test('市を入力して「検索」ボタンを押すとSearchCityNameが呼び出される', () => {
-            const searchSpy = jest.fn();
             const switchScreenSpy = jest.fn();
             const weatherRequestSpy = jest.fn();
-            const utils = render(<SearchCityName search={searchSpy} switchResultScreen={switchScreenSpy} weatherRequest={weatherRequestSpy}/>);
+            const utils = render(<SearchCityName switchResultScreen={switchScreenSpy} weatherRequest={weatherRequestSpy}/>);
             const FormControl = utils.getByLabelText('cityName-input') as HTMLInputElement;
             const Button = utils.getByText('検索') as HTMLButtonElement;
 
@@ -20,11 +19,11 @@ describe('SearchCityName', () => {
             expect(FormControl.value).toEqual('Hakodate');
             // 検索ボタンを押す
             fireEvent.submit(Button);
-            // searchが発火する
-            expect(searchSpy).toHaveBeenCalledTimes(1); // 回数1回
-            expect(searchSpy).toHaveBeenCalledWith('Hakodate'); // 引数'Hakodate'
             // switchResultScreenが発火する
             expect(switchScreenSpy).toHaveBeenCalledTimes(1);
+            // weatherRequestが発火する
+            expect(weatherRequestSpy).toHaveBeenCalledTimes(1);
+            expect(weatherRequestSpy).toHaveBeenCalledWith("Hakodate");
         })
     })
 })

@@ -37,7 +37,7 @@ export default class SearchCityName extends React.Component<SearchCityNameProps,
     }
 
     private handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        const { search, switchResultScreen, weatherRequest } = this.props;
+        const { switchResultScreen, weatherRequest } = this.props;
         const { cityName } = this.state;
 
         e.preventDefault();
@@ -45,9 +45,8 @@ export default class SearchCityName extends React.Component<SearchCityNameProps,
             return;
         }
 
-        search(cityName);
+        weatherRequest(this.state.cityName);
         switchResultScreen();
-        weatherRequest(cityName);
 
         this.setState({
             cityName:""

@@ -1,5 +1,4 @@
 export interface ISearchCityNameProps {
-    search: (cityName: string) => void;
     switchResultScreen: () => void;
     weatherRequest: (cityName: string) => void;
 }
