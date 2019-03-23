@@ -46,6 +46,7 @@
     "grpc_tools_node_protoc_ts": "^2.4.2",
     "react-bootstrap": "^0.32.4",
     "react-testing-library": "^6.0.0",
+    "redux-saga-test-plan": "^4.0.0-beta.2",
     "typescript": "^3.2.2"
   },
   "build": {
