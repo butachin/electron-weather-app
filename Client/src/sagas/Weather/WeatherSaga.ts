@@ -6,7 +6,7 @@ import { weatherSucceded, weatherFailed } from 'src/actions/WeatherAction/Weathe
 import { WeatherActionType } from 'src/actions/WeatherAction/WeatherActionType';
 import { Weathers } from 'src/states/WeatherState';
 
-function* weatherRequest(action: WeatherRequestAction) {
+export function* weatherRequest(action: WeatherRequestAction) {
     const response = yield call(getWeather, action.cityName);
     const weatherList = response.result.getWeatherlistList();
     const weathers: Weathers = yield mapWeatherPbToWeathers(weatherList);

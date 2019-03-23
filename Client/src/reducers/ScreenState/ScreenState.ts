@@ -19,7 +19,7 @@ const screenState = (state: IScreenState = initialState, action: ScreenAction): 
           screenType: ScreenType.RESULT_SCREEN
       };
     default:
-      return initialState;
+      return state;
   }
 };
 
